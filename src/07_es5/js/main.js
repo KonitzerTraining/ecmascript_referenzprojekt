@@ -50,19 +50,38 @@ keys.forEach(function (key) {
     console.log(key, o1[key]);
 });
 
-let x = Object.create({
-    info: '2134',
-    play: function () {
-        console.log('läuft');
+let x = Object.create(
+    // 1. Parameter ist der Prototype des neuen Objekts
+    {
+        info: '2134',
+        // Method
+        play: function () {
+            console.log('läuft');
+        },
+        constructor: Date // funktioniert, ist Quatsch
     },
-    constructor: Date // funktioniert, ist Quatsch
-}, {
-    title: {
-        value: 'Baum',
-        enumerable: true
-    }
-});
+    // 2. Parameter sind die Eigenschaften / Properties des neuen Objects
+    {
+        title: {
+            value: 'Baum',
+            enumerable: true
+        },
+        __id__: {
+            value: '2038243098',
+            writable: true
+        },
+        id: {
+            get: function () {
+                return this.__id__;
+            },
+            set: function (newId) {
+                this.__id__ = newId;
+            }
+        }
+    });
 console.log(x);
+console.log(x.id);
+x.id = '4309ogjsdy';
 
 /*
 let myArray = Object.create(Array.prototype, {
