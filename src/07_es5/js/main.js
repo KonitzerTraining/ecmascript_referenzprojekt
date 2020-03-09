@@ -9,17 +9,20 @@ Object.
  */
 "use strict";
 
+// ES3
 let o1 = {
     title: 'Baum'
 };
 o1.type = 'Eiche';
 
+// ES5
 Object.defineProperties(o1, {
     place: { // Property descriptor map
         value: 'Nordeuropa',
-        enumerable: false
+        enumerable: true
     },
 });
+
 Object.defineProperty(o1, 'bestand', {
     value: '1Mrd',
     enumerable: false,
@@ -30,7 +33,7 @@ Object.defineProperty(o1, 'bestand', {
 console.log(o1);
 
 for (let key in o1) {
-    console.log(key);
+    console.log(key, o1[key]);
 }
 
 Object.seal(o1);
@@ -38,7 +41,12 @@ Object.seal(o1);
 
 console.log(o1);
 // besser als for-in
-Object.keys(o1).forEach(function (key) {
+
+let keys = Object.keys(o1);
+console.log(keys);
+
+// ES5 forEach - Alternative für eine for-Schleife
+keys.forEach(function (key) {
     console.log(key, o1[key]);
 });
 
@@ -46,7 +54,8 @@ let x = Object.create({
     info: '2134',
     play: function () {
         console.log('läuft');
-    }
+    },
+    constructor: Date // funktioniert, ist Quatsch
 }, {
     title: {
         value: 'Baum',
@@ -54,6 +63,21 @@ let x = Object.create({
     }
 });
 console.log(x);
+
+/*
+let myArray = Object.create(Array.prototype, {
+
+    getFrames: {
+        value: function () {
+            return this.getSeconds / 60;
+        }
+    }
+});
+
+console.log(myArray.getFrames());
+console.log(myArray.push(234));
+console.log(myArray);
+*/
 
 // ES5: Prototype wird ignoriert
 Object.keys(x).forEach(function (key) {
