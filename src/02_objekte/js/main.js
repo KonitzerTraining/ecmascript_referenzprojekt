@@ -6,7 +6,6 @@
 let o = new Object();
 console.log(typeof Object);
 
-
 // Hinzufügen von Eigenschaften via .
 o.color = 'green';
 o['title'] = 'Headline';
@@ -25,6 +24,11 @@ console.log(o1.color);
 console.log(o1.__proto__);
 console.log(Object.prototype === o1.__proto__);
 
+// Eigene Objekt - mit ES3-Technik
+function Person () {}
+
+let p = new Person();
+console.log(p);
 
 // ES 6 - neue Schreibweise
 class Haus {
@@ -33,19 +37,10 @@ console.log(typeof Haus);
 let h = new Haus();
 console.log(h);
 
-
 // Alle Funktionen sind Objekte
 let f3 = new Function ('console.log("aha");');
 f3();
 console.log(typeof f3);
-
-// Eigene Objekt
-function Person () {
-
-}
-
-let p = new Person();
-console.log(p);
 
 // Wrapper type
 let t1 = 'Text';
