@@ -79,10 +79,6 @@ console.log(myArray.push(234));
 console.log(myArray);
 */
 
-// ES5: Prototype wird ignoriert
-Object.keys(x).forEach(function (key) {
-    console.log(key, x[key]);
-});
 
 // ES3: Prototype muss gefiltert werden
 for (let key in x) {
@@ -90,6 +86,12 @@ for (let key in x) {
         console.log(key);
     }
 }
+
+// ES5: Prototype wird ignoriert - besser
+Object.keys(x).forEach(function (key) {
+    console.log(key, x[key]);
+});
+
 
 // ES 6
 let y = {};
