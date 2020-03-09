@@ -87,6 +87,7 @@ let fY2 = x => x * x;
 let erg2 = fY2(5);
 console.log(erg);
 
+// Constructor Pattern
 function Person (name) {
     this.name = name;
 }
