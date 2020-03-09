@@ -71,6 +71,7 @@ let x = Object.create(
             writable: true
         },
         id: {
+            // Getter funktionieren hier anders als in Java!
             get: function () {
                 return this.__id__;
             },
