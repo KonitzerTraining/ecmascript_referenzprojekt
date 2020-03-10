@@ -8,7 +8,9 @@ class CustomerListComponent extends HTMLElement {
 
         this.addEventListener('click', function () {
             console.log('ok');
-        })
+        });
+
+        console.log(this.getAttribute('data-customers'));
     }
 
 }
