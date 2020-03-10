@@ -5,6 +5,10 @@ class Produkt {
         this.r = 0;
     }
 
+    /**
+     * Accepts Numbers
+     * @param r: number
+     */
     makeReservation (r) {
         this.r += r;
     }

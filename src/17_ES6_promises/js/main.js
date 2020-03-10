@@ -1,5 +1,5 @@
 function interceptJSON(dataString, cb) {
-    cb(JSON.parse(dataString));
+    setTimeout(cb, 500, JSON.parse(dataString));
 }
 
 function createComponent(data) {
@@ -8,12 +8,35 @@ function createComponent(data) {
 
 function getData(cb, cb1) {
     setTimeout(function () {
-        let dataString = '[{"id":3},{"id":5}]';
+        let dataString = '[{"id":3},{"id":5}]'; // Fake-Daten von einem gedachten Server
         cb(dataString, cb1);
     }, 1000);
 }
 
 getData(interceptJSON, createComponent);
+
+let promise = new Promise(function (resolve, reject) {
+    if (Math.random() > 0.5) {
+        resolve('text');
+    } else {
+        reject('Fehlertext');
+    }
+});
+
+promise
+    .then(function (text) {
+        return text.length;
+    })
+    .then(function (l) {
+        console.log(l);
+        throw new Error('Unbekannter Fehler')
+    })
+    .catch(function (m) {
+        console.log(m);
+    });
+
+
+/*
 
 function get() {
     return new Promise((resolve, reject) => {
@@ -65,4 +88,4 @@ function compute(x) {
 console.log('123');
 
 
-
+*/
