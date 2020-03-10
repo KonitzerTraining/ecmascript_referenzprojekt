@@ -2,6 +2,7 @@
 // "use strict";
 var oES3 = {
     title: 'Baum',
+    "Projekt-Id": '20934809',
     3: 'Wald'
 };
 console.log(oES3);
@@ -11,8 +12,9 @@ console.log(oES3.title);
 console.log(oES3['title']);
 console.log(oES3[3]);
 console.log(oES3[prop1]);
+console.log(oES3["Projekt-Id"]);
 
-// ES5
+// ES5 - Ab IE 8 / 9
 var oES5 = {};
 Object.defineProperties(oES5, {
     title: {
@@ -46,17 +48,18 @@ console.log(oES5.id);
 let prop2 = 'color';
 let projects = ['pwer342','03978'];
 let fname = 'delete';
+
 let oES6 = {
     __id__ : '001',
     title : 'Haus',
-    [prop2]: 'blue',
-    //projects: projects
+    [prop2]: 'blue', // Dynamische Bezeichner
+    // projects: projects
     projects,
- //   add: function () {}
+    // add: function () {}
     add () {
 
     },
-    [fname] (){
+    [fname] (){ // Dynamischer Methodenname
         console.log('delete it');
     },
     get id () {
@@ -70,3 +73,10 @@ oES6.delete();
 console.log(oES6.id);
 oES6.id = 'new';
 console.log(oES6.id);
+
+Reflect.defineProperty(oES6, 'color', {
+    value: 'blue',
+    enumerable: true
+    // writable: false,
+    // configurable: false,
+});
