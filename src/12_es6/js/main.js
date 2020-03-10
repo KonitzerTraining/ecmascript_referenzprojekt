@@ -1,9 +1,9 @@
 // neues Schlüsselwort let
-let a = 'Scope Variable';
+let a = 'Scoped Variable'; // Block Level Variable
 
 // Konstante
 // üblicher als Variablen
-const CODE = 'unveränderlich';
+const CODE = 'unveränderlich'; // Uppercase convention
 const OBJEKT = {
 };
 
@@ -12,7 +12,7 @@ OBJEKT.color = 'red';
 // OBJEKT = 243;
 
 // Funktionen können default erhalten
-function comp (x = 1) {
+function comp (x= 1) {
     console.log(x);
 }
 comp();
@@ -20,13 +20,14 @@ comp();
 // Zeichenketten
 // ES3 '' oder ""
 // template literal notation
+// caps-backtick space
 let text = `
 Mehrzeiliger 
-    ${helper(`saf`)} 
+    ${helper(`948598938`) + '0001'} 
 Text
 ` + `34`;
 console.log(text);
 
 function helper(y) {
-    return 'ok' + y;
+    return '0049' + y;
 }

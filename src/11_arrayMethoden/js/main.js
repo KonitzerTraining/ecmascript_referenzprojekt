@@ -1,8 +1,11 @@
+// ES5, meistens
 let list01 = [3, 43, 5];
 
+// Hier mit Arrow, muss nicht ubedingt sein
 let list02 = list01.filter((item) => {
     return item > 4;
 });
+
 
 console.log(list01);
 console.log(list02);
