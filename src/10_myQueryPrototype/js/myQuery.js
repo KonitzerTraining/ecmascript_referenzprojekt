@@ -1,10 +1,15 @@
+// Namespace pattern
 window.myQuery = window.myQuery || (function () {
     "use strict";
 
+    // Constructor Pattern
     function _$ (collection) {
+        // Properties
         this.collection = collection;
     }
 
+    // Prototypal extension
+    // Methods
     _$.prototype.css = function (property,value) {
         this.collection.forEach(function (element) {
             console.dir(element);
@@ -14,8 +19,9 @@ window.myQuery = window.myQuery || (function () {
         return this;
     };
 
+    // Factory
     function $(selector) {
-        let collection = document.querySelectorAll(selector);
+        var collection = document.querySelectorAll(selector);
         return new _$(collection);
     }
 

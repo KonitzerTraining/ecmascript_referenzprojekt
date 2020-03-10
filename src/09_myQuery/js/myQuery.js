@@ -20,6 +20,7 @@
             css: css,
         };
 
+        // private funktion
         function css (property, value) {
             console.log(elements);
 
