@@ -1,6 +1,10 @@
-let collection = $('p');
-console.log(collection);
+(function ($) {
 
-collection
-    .css('background-color', 'red')
-    .css('color', 'white');
+    let collection = $('p');
+    console.log(collection);
+
+    collection
+        .css('background-color', 'red')
+        .css('color', 'white');
+
+}(myQuery));
