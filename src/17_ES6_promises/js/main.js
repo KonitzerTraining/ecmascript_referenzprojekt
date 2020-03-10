@@ -1,3 +1,4 @@
+/*
 function interceptJSON(dataString, cb) {
     setTimeout(cb, 500, JSON.parse(dataString));
 }
@@ -35,12 +36,13 @@ promise
         console.log(m);
     });
 
+*/
 
-/*
 
 function get() {
     return new Promise((resolve, reject) => {
-        if (Math.random() > 0.5) {
+
+        if (Math.random() > 0.2) {
             let dataString = '[{"id":7},{"id":8}]';
             resolve(dataString);
         } else {
@@ -65,7 +67,7 @@ get()
        console.log('ende');
     });
 
-
+/*
 // ES8
 // async await
 function compute(x) {
