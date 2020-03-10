@@ -74,8 +74,8 @@ console.log(oES6.id);
 oES6.id = 'new';
 console.log(oES6.id);
 
-Reflect.defineProperty(oES6, 'color', {
-    value: 'blue',
+Reflect.defineProperty(oES6, 'count', {
+    value: 5,
     enumerable: true
     // writable: false,
     // configurable: false,

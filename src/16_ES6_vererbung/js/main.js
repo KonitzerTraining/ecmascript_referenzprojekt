@@ -12,7 +12,7 @@ class Produkt {
 
 class Bekleidung extends Produkt {
     constructor(title, price, size) {
-        super(title, price);
+        super(title, price); // Produkt.call(this, title, price);
 
         this.size = size;
     }
@@ -22,6 +22,9 @@ class Bekleidung extends Produkt {
     }
 }
 
+console.dir(Produkt);
+console.dir(Bekleidung);
+
 let b = new Bekleidung('Hemd', 40, 'L');
 console.log(b.passtDas('M'));
 
@@ -29,3 +32,10 @@ console.log(b);
 b.makeReservation(5);
 b.makeReservation(2);
 console.log(b.r);
+
+/*
+*           Object.prototype
+*       Produkt.prototype
+*   Bekleidung.prototype
+* b
+* */

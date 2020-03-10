@@ -2,7 +2,9 @@
 
 // let Project = class {
 class Project {
-    constructor(title) {
+    constructor(title) { // Alias auf die Funktion Project
+
+        // lokal Variable (private)
         let id = 'asldfkj';
         // ES6 Reflect API
         Reflect.defineProperty(this, 'title', {
@@ -16,8 +18,10 @@ class Project {
             },
             enumerable: true
         });
+
     }
 
+    // Project.prototype.partner = function () {return 'a,b,c'}
     partner () {
         return 'a,b,c';
     }
@@ -26,6 +30,7 @@ class Project {
         return this.__id__;
     }
 
+    // Project.info
     static get info () {
         return 'demo';
     }
@@ -47,3 +52,10 @@ Object.keys(p1).forEach((key) => {
 
 
 console.log(Project.info);
+console.log(p1.id);
+
+/*
+main.js:56 Uncaught TypeError: Cannot set property id of #<Project> which has only a getter
+    at main.js:56
+*/
+p1.id = '2q43r';
