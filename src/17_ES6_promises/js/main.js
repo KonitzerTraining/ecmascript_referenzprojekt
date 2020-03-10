@@ -38,9 +38,9 @@ promise
 
 */
 
-
+/*
 function get() {
-    return new Promise((resolve, reject) => {
+    return new Promise(function(resolve, reject) {
 
         if (Math.random() > 0.2) {
             let dataString = '[{"id":7},{"id":8}]';
@@ -52,10 +52,10 @@ function get() {
 }
 
 get()
-    .then((dataString) => {
+    .then(function (dataString) {
         //throw new Error('no json');
         return JSON.parse(dataString);
-      //  return new Promise();
+        //  return new Promise();
     })
     .then((dataObj) => {
         console.log(dataObj);
@@ -63,11 +63,11 @@ get()
     .catch((err) => {
         console.log(err);
     })
-    .finally(()=> {
-       console.log('ende');
+    .finally(() => {
+        console.log('ende');
     });
+*/
 
-/*
 // ES8
 // async await
 function compute(x) {
@@ -87,7 +87,5 @@ function compute(x) {
 });
 
 
-console.log('123');
 
 
-*/

@@ -3,8 +3,7 @@ import HttpClient from "../lib/http-client.js";
 export default class CustomerList {
 
     constructor() {
-        this.customers = [];
-
+        this.httpClient = new HttpClient();
         // ES6
         Reflect.defineProperty(this, 'customers', {
            value: [],
@@ -12,16 +11,6 @@ export default class CustomerList {
            enumerable: true,
            configurable: false
         });
-
-        this.httpClient = new HttpClient();
-    }
-
-    loadCustomersWrong () {
-        this.httpClient
-            .get('http://localhost:3000/customers')
-            .then(function () {
-                console.log(this);
-            });
     }
 
     loadCustomers () {
