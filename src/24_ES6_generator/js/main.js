@@ -9,13 +9,16 @@ console.log(erg);
 function* f2 () {
   //  return 5;
     let i = 0;
-    while (true) {
+    while (i < 4) {
         i++;
         yield i;
     }
 }
 
 let ergF2 = f2();
+console.log(ergF2.next());
+console.log(ergF2.next());
+console.log(ergF2.next());
 console.log(ergF2.next());
 console.log(ergF2.next());
 console.log(ergF2.next());
