@@ -1,3 +1,4 @@
+// anstatt import (bis Node 14) wird require
 const http = require('http');
 
 const hostname = '127.0.0.1';

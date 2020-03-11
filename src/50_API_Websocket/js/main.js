@@ -1,4 +1,22 @@
+import WebsocketClient from "../lib/websocket-client.js";
 
+let wsc = new WebsocketClient('wss://echo.websocket.org/');
+wsc
+    .open()
+    .then(() => {
+        console.log('open');
+        wsc.sendMessage('Hallo1');
+        wsc.sendMessage('Hallo2');
+        wsc.sendMessage('Hallo3');
+    });
+
+wsc
+    .listen()
+    .then((e) => {
+        console.log(e);
+    });
+
+/*
 var wsUri = "wss://echo.websocket.org/";
 var output;
 
@@ -54,3 +72,5 @@ function writeToScreen(message)
 }
 
 window.addEventListener("load", init, false);
+
+*/
